@@ -38,6 +38,8 @@
     //设置当前按钮选中状态
     _selectedBtn = _btnList[idxPath];
     _selectedBtn.selected = YES;
+    
+
 }
 
 - (void)setupUI {

@@ -24,12 +24,15 @@ static NSString *cellID = @"cellID";
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-//    _myTB.contentInset = UIEdgeInsetsMake(40, 0, 0, 0);
+   _myTB.contentInset = UIEdgeInsetsMake(80, 0, 0, 0);
     _myTB.backgroundColor = [UIColor clearColor];
     
     
     _myTB.dataSource = self;
     _myTB.delegate = self;
+    
+//    LLpaintCircleView *paintCircleView = [[LLpaintCircleView alloc]init];
+//    _myTB.tableHeaderView = paintCircleView;
     
     [_myTB registerClass:[UITableViewCell class] forCellReuseIdentifier:cellID];
     
@@ -39,10 +42,10 @@ static NSString *cellID = @"cellID";
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     if(scrollView.isDragging | scrollView.decelerating |scrollView.isTracking){
         
-        _paintCircleView.offset = scrollView.contentOffset.y;
-//        _heightConstraint.constant = (-scrollView.contentOffset.y);
+        _paintCircleView.offset = scrollView.contentOffset.y +80;
+        _heightConstraint.constant = (-scrollView.contentOffset.y);
         
-//        NSLog(@"%.2f",-scrollView.contentOffset.y);
+        NSLog(@"%.2f",scrollView.contentOffset.y + 80);
     }
 }
 

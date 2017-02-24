@@ -16,6 +16,9 @@
 - (void)setOffset:(CGFloat)offset{
     _offset = offset;
     
+    if(_offset > 0){
+        _offset = 0;
+    }
     if(_offset < -MAX_OFFSET){
         _offset = -MAX_OFFSET;
     }
